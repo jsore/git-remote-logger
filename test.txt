@@ -1,0 +1,18 @@
+  304  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  306  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  308  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  310  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  360  defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="small-spacer-tile";}'
+  362  defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+  399  myDefaults | grep "persistent-apps"
+  480  history | grep "persistent-apps" >> test.txt
+  304  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  306  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  308  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  310  command defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
+  360  defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="small-spacer-tile";}'
+  362  defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+  399  myDefaults | grep "persistent-apps"
+  480  history | grep "persistent-apps" >> test.txt
+  482  history | grep "persistent-apps" >> test.txt
+command defaults write com.apple.dock

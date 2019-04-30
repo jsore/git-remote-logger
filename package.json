@@ -11,5 +11,12 @@
     "url": "git@github.com-jsore:jsore/git-remote-logger.git"
   },
   "author": "Justin Sorensen",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+    "github-remotes": "./new-remote.js"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "yargs": "^13.2.2"
+  }
 }

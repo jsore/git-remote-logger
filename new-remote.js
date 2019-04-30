@@ -1,7 +1,19 @@
 #!/usr/bin/env node
 
 /**
- * Pub/git-remote-logger/logger.js
+ * make this executable first
+ *
+ *      $ chmod +x new-remote.js
+ *
+ * then add a symlink globally with npm, from this directory
+ *
+ *      $ sudo npm link
+ *
+ * now, commands names listed in package.json.bin are global
+ *
+ * to undo that
+ *
+ *      $ sudo npm link
  */
 'use strict';
 
@@ -48,10 +60,11 @@ const argv = yargs
     /** call argv on return of command() for yarg to store its args */
     .argv;
 
+/** the command provided to program github-remotes */
 var command = argv._[0];
-console.log('Command: ', command);
-console.log('raw process.argv version: ', process.argv);
-console.log('raw lodash + yargs version:', argv);
+// console.log('Command: ', command);
+// console.log('raw process.argv version: ', process.argv);
+// console.log('raw lodash + yargs version:', argv);
 
 
 //if (!logfile) {
