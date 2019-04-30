@@ -1,0 +1,15 @@
+{
+  "name": "git-remote-logger",
+  "version": "1.0.0",
+  "description": "Establishes and tracks Git/GitHub Remotes",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-jsore:jsore/git-remote-logger.git"
+  },
+  "author": "Justin Sorensen",
+  "license": "ISC"
+}
