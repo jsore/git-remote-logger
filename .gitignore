@@ -1,2 +1,7 @@
 node_modules
 node_modules/*
+
+# purposefully ignoring package.json because of
+# my custom GitHub SSH host
+package.json
+package-lock.json

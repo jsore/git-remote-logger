@@ -17,6 +17,14 @@
  */
 'use strict';
 
+
+
+// NOTE
+// should I change the main access point in package.json?
+// if I do be sure to update README
+
+
+
 // notesApp-node/app.js
 
 const fs = require('fs');
@@ -42,11 +50,13 @@ const origin = 'origin';
 /** command parameters */
 const sshHostArg = {
     describe: 'Which SSH Host to use ( see ~/.ssh/config for options )',
-    demand: true,
+    // demand: true,
+    demand: false,
     alias: 'h'
 };
 const remoteArg = {
-    describe: 'Remote SSH Address',
+    // describe: 'Remote SSH Address',
+    describe: 'Remote URL or SSH Address',
     demand: true,
     alias: 'r'
 };
@@ -63,6 +73,8 @@ const argv = yargs
         remote: remoteArg
     })
     .command('view-all', 'View all connected SSH remotes')
+    //.command('pull', 'Grab an files for an existing project')
+    //.command('delete', 'Remove a remote')
     .command('push', 'Push staged files to the remote branch', {
         branch: branchArg
     })
