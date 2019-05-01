@@ -22,7 +22,9 @@ Or using MacPorts
 $ port install nodejs10
 ```
 
-Or download Node's `.dmg` [https://nodejs.org/en/download/](direct from their website) and use it to install
+Or download Node's `.dmg` direct from their website and use it to install<br>
+https://nodejs.org/en/download/
+
 
 If you're installing on any system other than macOS, go to the download's page
 for install instructions
