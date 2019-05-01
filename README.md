@@ -161,18 +161,18 @@ For new projects, create a new repo on GitHub and give the program its remote ad
 
 > SSH example
 ```
-$ git-remotes add git@github.com:username/some-project.git
+$ github-remotes add git@github.com:username/some-project.git
 ```
 
 > HTTPS example
 ```
-$ git-remotes add https://github.com/username/some-project.git
+$ github-remotes add https://github.com/username/some-project.git
 ```
 
 Or if you're wanting to add an existing GitHub project, add its remote then pull down its files
 ```
-$ git-remotes add https://github.com/username/some-project.git
-$ git-remotes pull origin master
+$ github-remotes add https://github.com/username/some-project.git
+$ github-remotes pull origin master
 ```
 
 <br>
@@ -183,7 +183,7 @@ This program logs all your remotes automatically
 
 To see all active remotes
 ```
-$ git-remotes view-all
+$ github-remotes view-all
 ```
 
 <br>
@@ -191,7 +191,7 @@ $ git-remotes view-all
 ### Remove remotes
 
 ```
-$ git-remotes remove
+$ github-remotes remove
 ```
 
 <br>
@@ -199,7 +199,7 @@ $ git-remotes remove
 ### Push commits to a remote
 
 ```
-$ git-remotes push
+$ github-remotes push
 ```
 
 <br>
@@ -207,7 +207,7 @@ $ git-remotes push
 ### Help
 
 ```
-$ git-remotes help
+$ github-remotes help
 ```
 
 <br><br>
