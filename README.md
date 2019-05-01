@@ -142,7 +142,7 @@ You need `sudo` permissions for npm because npm is attempting to add the link to
 
 # Usage
 
-Your now able to track all your GitHub remotes using this program
+### Add remotes
 
 From anywhere on your create a new directory named after a project (new or existing)
 
@@ -175,17 +175,41 @@ $ git-remotes pull origin master
 
 <br>
 
+### View remotes
+
+This program logs all your remotes automatically
+
 To see all active remotes
 ```
 $ git-remotes view-all
 ```
 
-To push commits up to a remote
+<br>
+
+### Remove remotes
+
 ```
-$ git-remtoes push
+$ git-remotes remove
 ```
 
-For help
+<br>
+
+### Push commits to a remote
+
+```
+$ git-remotes push
+```
+
+<br>
+
+### Help
+
 ```
 $ git-remotes help
 ```
+
+<br><br>
+
+### For more GitHub fun
+
+https://github.com/jsore/multi-github-ssh-keys

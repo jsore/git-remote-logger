@@ -74,7 +74,7 @@ const argv = yargs
     })
     .command('view-all', 'View all connected SSH remotes')
     //.command('pull', 'Grab an files for an existing project')
-    //.command('delete', 'Remove a remote')
+    //.command('remove', 'Remove a remote')
     .command('push', 'Push staged files to the remote branch', {
         branch: branchArg
     })
