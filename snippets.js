@@ -3,6 +3,9 @@
  */
 'use strict';
 
+
+/*----------  excerpts from my files  ----------*/
+
 const fs = require('fs');
 
 /** grab the spawn method from child_process Node.js module */
@@ -80,3 +83,61 @@ fs.watch(filename, () => {
     })
 });
 console.log(`Watching ${filename} for changes...`);
+
+
+
+/*----------  from source docs  ----------*/
+
+// from yargs docs
+
+require('yargs') // eslint-disable-line
+  .command('serve [port]', 'start the server', (yargs) => {
+    yargs
+      .positional('port', {
+        describe: 'port to bind on',
+        default: 5000
+      })
+  }, (argv) => {
+    if (argv.verbose) console.info(`start server on :${argv.port}`)
+    serve(argv.port)
+  })
+  .option('verbose', {
+    alias: 'v',
+    default: false
+  })
+  .argv
+
+// if function throws, delegate to fail() or print to console
+
+// simple callback
+var argv = require('yargs')
+  .coerce('file', function (arg) {
+    return require('fs').readFileSync(arg, 'utf8')
+  })
+  .argv
+
+// takes object that maps several keys to their coercion function
+var argv = require('yargs')
+  .coerce({
+    date: Date.parse,
+    json: JSON.parse
+  })
+  .argv
+
+// map same function to array of several keys
+var path = require('path')
+var argv = require('yargs')
+  .coerce(['src', 'dest'], path.resolve)
+  .argv
+
+// dot-notion & arrays, coercion applied to final object that is parsed
+// --user.name Batman --user.password 123
+// gives us: {name: 'batman', password: '[SECRET]'}
+var argv = require('yargs')
+  .option('user')
+  .coerce('user', opt => {
+    opt.name = opt.name.toLowerCase()
+    opt.password = '[SECRET]'
+    return opt
+  })
+  .argv
