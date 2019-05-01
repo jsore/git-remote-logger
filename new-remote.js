@@ -64,7 +64,8 @@ const branchArg = {
     describe: 'Optional branch to push staged files to',
     demand: false,
     alias: 'b'
-}
+};
+
 
 /** what to do with those parameters */
 const argv = yargs
@@ -85,9 +86,9 @@ const argv = yargs
 
 /** the command provided to program github-remotes */
 var command = argv._[0];
-// console.log('Command: ', command);
-// console.log('raw process.argv version: ', process.argv);
-// console.log('raw lodash + yargs version:', argv);
+console.log('Command: ', command);
+console.log('raw process.argv version: ', process.argv);
+console.log('raw lodash + yargs version:', argv);
 
 
 // from NodeBasics/notesApp-node/app.js
