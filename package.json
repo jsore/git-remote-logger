@@ -2,7 +2,7 @@
   "name": "git-remote-logger",
   "version": "1.0.2",
   "description": "Establishes and tracks Git/GitHub Remotes",
-  "main": "logger.js",
+  "main": "new-remote.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,7 @@
   "author": "Justin Sorensen",
   "license": "ISC",
   "bin": {
-    "github-remotes": "./new-remote.js"
+    "remotes": "./new-remote.js"
   },
   "dependencies": {
     "lodash": "^4.17.11",

@@ -50,11 +50,11 @@ This is altering npm's global config file, not any of your OS's, it's safe
 
 <br>
 
-### Pull down the files from GitHub
+### Pull down this repo's files
 
 In your terminal, navigate to where you want the `git-remote-logger` folder to live, then
 ```
-$ git clone https://github.com/jsore/NodeBasics.git
+$ git clone https://github.com/jsore/git-remote-logger.git
 ```
 
 <br>
@@ -103,7 +103,7 @@ Open yours in your text editor and alter it to match this:
   "name": "git-remote-logger",
   "version": "1.0.2",
   "description": "Establishes and tracks Git/GitHub Remotes",
-  "main": "logger.js",
+  "main": "new-remote.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -114,7 +114,7 @@ Open yours in your text editor and alter it to match this:
   "author": "Justin Sorensen",
   "license": "ISC",
   "bin": {
-    "github-remotes": "./new-remote.js"
+    "remotes": "./new-remote.js"
   },
   "dependencies": {
     "lodash": "^4.17.11",       <-- your version may differ, that's fine
@@ -123,7 +123,7 @@ Open yours in your text editor and alter it to match this:
 }
 ```
 
-An important thing to note before moving forward is the `"bin": { }` option `"github-remotes"`
+An important thing to note before moving forward is the `"bin": { }` option `"remotes"`
 
 Whatever you enter for that field will be the name of the command you run to use this program
 
@@ -137,8 +137,6 @@ While still in the project folder, add a global symlink to this package with npm
 ```
 $ sudo npm link
 ```
-
-You need `sudo` permissions for npm because npm is attempting to add the link to your `/bin`
 
 <br>
 
@@ -157,22 +155,22 @@ $ git add -A
 $ git commit -m "First commit"
 ```
 
-For new projects, create a new repo on GitHub and give the program its remote addreess
+For new projects, create a new repo on GitHub and give the program it's remote addreess
 
 > SSH example
 ```
-$ github-remotes add git@github.com:username/some-project.git
+$ remotes add git@github.com:username/some-project.git
 ```
 
 > HTTPS example
 ```
-$ github-remotes add https://github.com/username/some-project.git
+$ remotes add https://github.com/username/some-project.git
 ```
 
 Or if you're wanting to add an existing GitHub project, add its remote then pull down its files
 ```
-$ github-remotes add https://github.com/username/some-project.git
-$ github-remotes pull origin master
+$ remotes add https://github.com/username/some-project.git
+$ remotes pull origin master
 ```
 
 <br>
@@ -183,7 +181,7 @@ This program logs all your remotes automatically
 
 To see all active remotes
 ```
-$ github-remotes view-all
+$ remotes view-all
 ```
 
 <br>
@@ -191,7 +189,7 @@ $ github-remotes view-all
 ### Remove remotes
 
 ```
-$ github-remotes remove
+$ remotes remove
 ```
 
 <br>
@@ -199,7 +197,7 @@ $ github-remotes remove
 ### Push commits to a remote
 
 ```
-$ github-remotes push
+$ remotes push
 ```
 
 <br>
@@ -207,7 +205,7 @@ $ github-remotes push
 ### Help
 
 ```
-$ github-remotes help
+$ remotes help
 ```
 
 <br><br>
