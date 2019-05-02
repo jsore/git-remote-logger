@@ -4,6 +4,14 @@ When a new remote is created, log it in a running list of active repos.
 
 <br>
 
+To Do:
+- remove function
+- push function
+- pull function
+- auto-pull if linking to existing repo
+
+<br>
+
 # Install
 
 > These steps will change if I figure out how to publish this to npm properly.
