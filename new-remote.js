@@ -32,8 +32,7 @@ const parse = require('./lib/parser.js');
 /** other globals */
 const source = process.cwd();          // where commands originate
 const home = path.resolve(__dirname);  // where this package/data are installed
-const data = path.resolve(home, '/remotes-data.json');
-
+const data = path.resolve(__dirname, '/remotes-data.json');
 
 /** settings for CLI environment when program is executed */
 const argv = yargs
@@ -71,49 +70,47 @@ const argv = yargs
   /** call home to wrap up yargs storage into argv */
   .argv;
 
-
 /** the command this program is called with */
 const command = argv._[0];
 
 if (command === 'add') {
   try {
     let remote = parse.addition(argv, source, home, data)
-      .then((remote) => {
-        if (remote) {
-          console.log(remote, 'added succesfully');
-        } else {
-          console.log('The remote you tried adding already exists here\n' +
-            'You can confirm this with "git remotes -v"\n')
-        }
-      }).catch(err => console.log(err));
-
-      //if (remote) {
-      //  console.log(remote, 'added succesfully');
-      //} else {
-      //  console.log('The remote you tried adding already exists here\n' +
-      //    'You can confirm this with "git remotes -v"\n')
-      //}
+    .then((remote) => {
+      if (remote) {
+        console.log(`\n  Remote added to logger successfully`);
+      } else {
+        console.log('The remote you tried adding already exists here\n' +
+          'You can confirm this with "git remotes -v"')
+      }
+    }).catch(err => console.log(err));
   } catch (e) { console.error(e); }
 
-  // if (remote) { console.log(remote, 'added succesfully'); }
-  //if (_.isString(remote)) { }  //returns false if thing isn't a string
-  //else {  }
-
 } else if (command === 'view-all') {
-  let remotes = '';
+  try {
+    let remotes = parse.view(home, data)
+    .then((remotes) => {
+      //console.log(remotes);
+      remotes.forEach((remote) =>
+        console.log(`Remote:    ${remote.remote}\nFound at:  ${remote.source}\n`))
+    });
+
+  } catch (e) { console.error(e); }
+
   //var allNotes = notes.getAll();
   //var allBoolean = true;
   //allNotes.forEach((note) => notes.logNoteSucces(note, 'retrieved', allBoolean));
 
 } else {
   //notes.logNoteAlt(`COmmand \"${command}\" not recognized`);
+  console.log(`Command '${command}' not recognized`);
 }
 
 // $ git remote add origin git@github.com-jsore:jsore/git-remote-logger.git
-// github-remotes add -r https://github.com/jsore/git-remote-logger.git
-// github-remotes add -r git@github.com:jsore/git-remote-logger.git
-// github-remotes add -r git@github.com:jsore/git-remote-logger.git -h jsore
-// github-remotes add -h jsore
+// remotes add -r https://github.com/jsore/git-remote-logger.git
+// remotes add -r git@github.com:jsore/git-remote-logger.git
+// remotes add -r git@github.com:jsore/git-remote-logger.git -h jsore
+// remotes add -h jsore
 // git remote add ${origin} ${arr.join(':')}
 
 
