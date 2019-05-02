@@ -46,11 +46,11 @@ const argv = yargs
          default: 'master' }
   })
   .command('view-all', 'View all connected SSH remotes')
-  .command('remove', 'Remove a remote', {
-    o: { alias: 'origin', describe: 'Specify a reference other than "origin"',
-         default: 'origin' }
-  })
   /** future features */
+  //.command('remove', 'Remove a remote', {
+  //  o: { alias: 'origin', describe: 'Specify a reference other than "origin"',
+  //       default: 'origin' }
+  //})
   //.command('pull', 'Pull down files from current remote', {
   //  o: { alias: 'origin', describe: 'Specify a reference other than "origin"',
   //       default: 'origin' },

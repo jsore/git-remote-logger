@@ -186,6 +186,21 @@ $ remotes view-all
 
 <br>
 
+### Help
+
+```
+$ remotes help
+```
+
+<br><br>
+
+### For more GitHub fun
+
+https://github.com/jsore/multi-github-ssh-keys
+
+<details><summary>Future features</summary>
+<br>
+
 ### Remove remotes
 
 ```
@@ -202,14 +217,10 @@ $ remotes push
 
 <br>
 
-### Help
+### Pull commits to a remote
 
 ```
-$ remotes help
+$ remotes push
 ```
 
-<br><br>
-
-### For more GitHub fun
-
-https://github.com/jsore/multi-github-ssh-keys
+</details>
