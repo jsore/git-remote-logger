@@ -90,21 +90,11 @@ if (command === 'add') {
   try {
     let remotes = parse.view(home, data)
     .then((remotes) => {
-      //console.log(remotes);
       remotes.forEach((remote) =>
         console.log(`Remote:    ${remote.remote}\nFound at:  ${remote.source}\n`))
     });
-
   } catch (e) { console.error(e); }
-
-  //var allNotes = notes.getAll();
-  //var allBoolean = true;
-  //allNotes.forEach((note) => notes.logNoteSucces(note, 'retrieved', allBoolean));
-
-} else {
-  //notes.logNoteAlt(`COmmand \"${command}\" not recognized`);
-  console.log(`Command '${command}' not recognized`);
-}
+} else { console.log(`Command '${command}' not recognized`); }
 
 // $ git remote add origin git@github.com-jsore:jsore/git-remote-logger.git
 // remotes add -r https://github.com/jsore/git-remote-logger.git
@@ -112,27 +102,3 @@ if (command === 'add') {
 // remotes add -r git@github.com:jsore/git-remote-logger.git -h jsore
 // remotes add -h jsore
 // git remote add ${origin} ${arr.join(':')}
-
-
-/**
- * lodash utility uniq
- * -- take an array, return it with duplicates removed
- */
-//var filteredArray = _.uniq(['name', 1, 'name', 1, 2, 3, 4]);
-//var filteredArray = _.uniq(['Mike']);
-//console.log(filteredArray);
-
-
-
-/** basic usage of appendFile(): */
-//fs.appendFile('greetings.txt', 'Hello World!');  // Hello World!
-
-/** concat'ing a variable: */
-//fs.appendFile('greetings.txt', 'Hello' + user.username +'!');  // Helloroot!
-
-/** using ES6 template strings (`string ${variable} more string`): */
-//fs.appendFile('greetings.txt', `Hello ${user.username}!`);  // Hello root!
-
-/** template strings and usage of exports from note.js: */
-//fs.appendFile('greetings.txt', `Hello ${user.username}! You are ${notes.age}.`);
-// Hello root! You are 25.
