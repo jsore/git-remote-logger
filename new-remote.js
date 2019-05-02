@@ -77,11 +77,9 @@ if (command === 'add') {
   try {
     let remote = parse.addition(argv, source, home, data)
     .then((remote) => {
+      /** ass backwards but if something is returned something failed */
       if (remote) {
-        console.log(`\n  Remote added to logger successfully`);
-      } else {
-        console.log('The remote you tried adding already exists here\n' +
-          'You can confirm this with "git remotes -v"')
+        console.log('\nCould not complete operation, no remote added');
       }
     }).catch(err => console.log(err));
   } catch (e) { console.error(e); }
@@ -95,10 +93,3 @@ if (command === 'add') {
     });
   } catch (e) { console.error(e); }
 } else { console.log(`Command '${command}' not recognized`); }
-
-// $ git remote add origin git@github.com-jsore:jsore/git-remote-logger.git
-// remotes add -r https://github.com/jsore/git-remote-logger.git
-// remotes add -r git@github.com:jsore/git-remote-logger.git
-// remotes add -r git@github.com:jsore/git-remote-logger.git -h jsore
-// remotes add -h jsore
-// git remote add ${origin} ${arr.join(':')}
